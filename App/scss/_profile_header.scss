@@ -1,0 +1,140 @@
+.profile {
+  &__header {
+    height: 60px;
+    // background: $dark;
+    background: linear-gradient(to bottom, $kefri_green, $kefri_brown);
+    padding: 5px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    // border-bottom: 1px solid $kefri_green;
+
+    &.open {
+      .header__menu {
+        > span {
+          &:first-child {
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 180px;
+
+    & > span {
+      font: {
+        size: $font-md;
+        weight: 600;
+      }
+
+      &:first-child {
+        display: inline-block;
+        margin-right: 10px;
+        width: 10px;
+        height: 10px;
+        background: {
+          image: url("../App/images/point.svg");
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        }
+      }
+    }
+
+    @include breakpoint-down(medium) {
+       left: 70px;
+    }
+
+    @include breakpoint-down(small) {
+        left: 50px;
+        // right: 20px;
+        & > span {
+            font: {
+                size: 0.825rem;
+            }
+
+            &:first-child {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+  }
+
+  &__info {
+    width: 250px;
+    height: 100%;
+
+    @include breakpoint-down(medium) {
+        width: auto;
+        height: auto;
+    }
+  }
+
+  &__pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // background: $white;
+    font-size: $font-md;
+
+    @include breakpoint-down(medium) {
+      font-size: $font-sm;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__details {
+    width: 150px;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: start;
+
+    .username {
+      font: {
+        weight: 600;
+      }
+      @include breakpoint-down(small) {
+        font-size: 0.775rem;
+        font-weight: 400;
+      }
+    }
+
+    .role {
+      color: $whiteOp;
+
+      @include breakpoint-down(small) {
+          display: none;
+      }
+    }
+
+    @include breakpoint-down(medium) {
+        width: auto;
+    }
+  }
+
+  &__logout {
+    width: 30px;
+    height: 30px;
+    // background: $lightGreen;
+    border-radius: 50%;
+    color: $white;
+    cursor: pointer;
+    font-size: $font-lg;
+
+    &:hover {
+      color: $veryDarkBrownOp;
+    }
+  }
+}

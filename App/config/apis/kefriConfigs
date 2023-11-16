@@ -1,0 +1,5 @@
+    $user = 'kefri_dbadmin';
+    $db = 'kefri_kefricok_accred_NC';
+    $password = 'Innovations@23';
+
+    https://www.kefri.org/certification/App/config/apis/counties.json      --> path to Json file

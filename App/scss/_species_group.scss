@@ -1,0 +1,203 @@
+.species__container {
+  .group {
+    width: 100%;
+    max-height: 75%;
+    overflow-y: scroll;
+    // border: 1px solid red;
+
+    .species-group {
+      padding: 3px 0 7px 0;
+      height: 50px;
+      width: 90%;
+      position: relative;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $errorBorder;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      &.emails {
+        padding: {
+          left: 5px;
+          right: 5px;
+        }
+      }
+      input.eval__email {
+        width: 70%;
+
+        @include breakpoint-down(medium) {
+          width: 80%;
+        }
+      }
+
+      input,
+      select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 40px;
+        border-radius: 40px;
+        border: 1px solid $formTitle;
+        padding-left: 10px;
+        &:not(:nth-child(5)) {
+          margin-right: 20px;
+        }
+        font: {
+          size: $font-sm;
+        }
+        color: $formInput;
+      }
+
+      select {
+        color: $placeHolder;
+
+        &.read {
+          color: $formInput;
+        }
+
+        &.write {
+          color: $placeHolder;
+        }
+      }
+
+      button {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        width: 50px;
+        left: 93%;
+        top: 3px;
+        margin-top: 3px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px $darkBrown;
+        align-self: center;
+        cursor: pointer;
+        font: {
+          size: $font-xlg;
+        }
+
+        &.minus {
+          color: red;
+          //right: 70px;
+
+          &.emails {
+            right: 75px;
+          }
+        }
+        &.add {
+          color: green;
+          left: 101%;
+          //right: 2px;
+
+          &.emails {
+            right: 5px;
+            left: 96%;
+          }
+        }
+
+        @include breakpoint-down(medium) {
+          width: 40px;
+
+          &.minus {
+            right: 45px;
+          }
+        }
+
+        @include breakpoint-down(small) {
+          &:not(.emails) {
+            width: 5%;
+
+            &.minus {
+              right: 5%;
+            }
+          }
+        }
+      }
+
+      @include breakpoint-down(small) {
+        &:not(.emails) {
+          width: 80%;
+          height: auto;
+          display: grid;
+          grid-template-columns: 2fr 2fr;
+          grid-gap: 5px;
+          grid-row-gap: 10px;
+          margin-left: 5px;
+  
+          input,
+          select {
+            width: 100%;
+            height: 35px;
+            position: relative;
+        
+          }
+  
+          button {
+            left: 107%;
+            height: 36px;
+            width: 40px;
+            border-radius: 8px;
+  
+            &.minus {
+              border-bottom: {
+                left-radius: 0;
+                right-radius: 0;
+              }
+            }
+  
+            &.add {
+              left: 107%;
+              top: 47%;
+              border-top: {
+                left-radius: 0;
+                right-radius: 0;
+              }
+            }
+          }
+        }
+        
+      }
+    }
+  }
+
+  &.emails {
+    width: 100%;
+    min-height: 300px;
+    justify-self: start;
+    align-self: start;
+
+    .group {
+      width: 60%;
+      padding-left: 30px;
+      button {
+        left: 81%;
+      }
+
+      @include breakpoint-down(medium) {
+        width: 80%;
+
+
+        button {
+          left: 81%;
+        }
+      }
+
+      @include breakpoint-down(small) {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+
+    @include breakpoint-down(medium) {
+      height: 400px;
+    }
+  }
+
+  .button {
+    border: none;
+  }
+}
